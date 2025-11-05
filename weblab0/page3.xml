@@ -1,0 +1,29 @@
+<emps>
+    <emp>
+        <id>1</id>
+        <name>John Doe</name>
+        <address>
+            <street>H# 38, R#3, Banani</street>
+            <city>Dhaka</city>
+        </address>
+        <department>Sales</department>
+    </emp>
+    <emp>
+        <id>2</id>
+        <name>Mark Zuckerberg</name>
+            <address>
+            <street>Flat# A/1, H# 20, R#18, Mirpur</street>
+            <city>Dhaka</city>
+            </address>
+        <department>Accounts</department>
+    </emp>
+    <emp>
+        <id>3</id>
+        <name>Ala Voski</name>
+            <address>
+            <street>H# 38, R#3, Motijheel</street>
+            <city></city>
+            </address>
+        <department>Human Resource</department>
+    </emp>
+</emps>
