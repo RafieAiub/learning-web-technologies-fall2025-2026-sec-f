@@ -1,0 +1,39 @@
+<html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="abc.html" onsubmit="return test()">
+        <input type="email" name="" id="email" onblur="mailTest()"> 
+        <p id="errorM"></p>
+        <input type="submit" value="submit">
+    </form>
+
+
+    <script>
+        let errorM = document.getElementById("errorM");
+        function mailTest(){
+            let email = document.getElementById("email").value;
+
+            if(email ==""){
+                errorM.innerHTML = "kindly put valid email";
+            }else{
+                errorM.innerHTML = "";
+            }
+        }
+
+        function test(){
+            if(errorM.innerHTML !==""){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>

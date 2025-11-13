@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="abc.html" method="" enctype="" id="login" onsubmit="return test()">
+        <h3>Name</h3>
+        <input type="text" name="" id="name" onblur="nameTest()"><br>
+        <p id="errorM"></p>
+        <br>
+        <input type="submit"  name="" value="Submit" id="">
+    </form>
+
+
+    <script>
+        let errorM = document.getElementById("errorM");
+
+        function nameTest(){
+            let name = document.getElementById("name").value;
+
+            if(name.length>1 && ((name[0]>= "A" && name[0]<="Z") || (name[0]>= "a" && name[0]<= "z"))){
+                errorM.innerHTML = "";
+            }else{
+                errorM.innerHTML = "kindly follow the rules";
+            }
+        }
+
+        function test(){
+            if(errorM.innerHTML !==""){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>

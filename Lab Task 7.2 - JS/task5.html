@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="abc.html" onsubmit="return degreeCheck()">
+        <input type="radio" name="Degree" id="" value="BSC">
+        <label for="Degree">BSC</label><br>
+        <input type="radio" name="Degree" id="" value="HSC">
+        <label for="Degree">HSC</label><br>
+        <input type="radio" name="Degree" id="" value="SSC">
+        <label for="Degree">SSC</label><br>
+
+        <p id="errorM"></p>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        function degreeCheck() {
+            let radios = document.getElementsByName("Degree");
+            let errorM = document.getElementById("errorM");
+            let selected = null;
+
+           
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selected = radios[i].value;
+                    break;
+                }
+            }
+
+            if (selected === null) {
+                errorM.innerHTML = "Please select your Degree.";
+                return false;
+            } else {
+                errorM.innerHTML = "";
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
