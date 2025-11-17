@@ -1,0 +1,15 @@
+.num{
+    height: 50px;
+    width: 50px;
+    border: 2px solid seagreen;
+    padding: 4px;
+    text-align: center;
+}
+
+.dis{
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+
+}
