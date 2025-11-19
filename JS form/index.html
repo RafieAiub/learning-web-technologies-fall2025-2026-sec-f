@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="input" placeholder="Your input">
+
+
+    <select name="cars" id="Options">
+        <option value="username">Username</option>
+        <option value="id">ID</option>
+        <option value="age">Age</option>
+        <option value="address">Adress</option>
+        <option value="nation">Nation</option>
+        <option value="city">City</option>
+    </select>
+
+    <button id="addbtn">Add</button>
+    <br>
+    <button id="savebtn" style="margin-top: 10px; margin-bottom: 10px;">Save</button>
+    <br>
+     <div id="addedOps"></div>
+    <div id="outputOps">
+
+        <h3>Saved data: </h3>
+        <div id="savedOps"></div>
+    </div>
+
+
+    <script>
+        const inputF = document.getElementById("input");
+        const addBtn = document.getElementById("addbtn");
+        const saveBtn = document.getElementById("savebtn");
+        const fieldSelect = document.getElementById("Options");
+
+
+        addBtn.addEventListener('click', () => {
+            const value = inputF.value;
+            const selectedOps = fieldSelect.options[fieldSelect.selectedIndex];
+            const optionText = selectedOps.text;
+
+
+            if (value.length === 0) {
+                alert("fill the form");
+            }
+            else {
+                const newText = document.createElement("p");
+                newText.style.height = "30px";
+                newText.style.display = "inline-block";
+                newText.style.width = "100px";
+                newText.style.padding = "20px";
+                newText.style.margin = "30px";
+                newText.style.border = "2px solid black";
+
+
+                const newOps = document.createElement("p");
+                newOps.style.display = "inline-block";
+                newOps.style.height = "30px";
+                newOps.style.width = "100px";
+                newOps.style.padding = "20px";
+                newOps.style.margin = "30px";
+                newOps.style.border = "2px solid black";
+
+
+
+                const node = document.createTextNode(`${value}`);
+                const nodeOps = document.createTextNode(`${optionText}`);
+
+                newText.appendChild(node);
+                newOps.appendChild(nodeOps);
+
+                const element = document.getElementById("addedOps");
+                element.appendChild(newText);
+                element.appendChild(newOps);
+            }
+        })
+
+        saveBtn.addEventListener(click, ()=>{
+
+             if (value.length === 0) {
+                alert("fill the form");
+            }
+            else {
+                const newText = document.createElement("p");
+
+                const node = document.createTextNode(`${value} : ${optionText}`);
+
+                newText.appendChild(node);
+
+                const element = document.getElementById("savedOps");
+                element.appendChild(newText);
+            }
+            
+        })
+
+    </script>
+</body>
+
+</html>
