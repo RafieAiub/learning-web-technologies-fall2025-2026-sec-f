@@ -24,7 +24,7 @@
     <br>
     <button id="savebtn" style="margin-top: 10px; margin-bottom: 10px;">Save</button>
     <br>
-     <div id="addedOps"></div>
+    <div id="addedOps"></div>
     <div id="outputOps">
 
         <h3>Saved data: </h3>
@@ -80,9 +80,15 @@
             }
         })
 
-        saveBtn.addEventListener(click, ()=>{
+        saveBtn.addEventListener("click", () => {
 
-             if (value.length === 0) {
+
+            const value = inputF.value;
+            const selectedOps = fieldSelect.options[fieldSelect.selectedIndex];
+            const optionText = selectedOps.text;
+
+
+            if (value.length === 0) {
                 alert("fill the form");
             }
             else {
@@ -95,7 +101,7 @@
                 const element = document.getElementById("savedOps");
                 element.appendChild(newText);
             }
-            
+
         })
 
     </script>
